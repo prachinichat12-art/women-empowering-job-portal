@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Log in or create your HerCareer account." />
+  <title>Login / Sign up — HerCareer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-body">
+
+  <header class="header header-solid">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="index.html" class="logo" aria-label="HerCareer home">
+        Her<span class="logo-accent">Career</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#jobs" class="nav-link">Jobs</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card reveal">
+      <!-- Toggle between Login and Sign up -->
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" id="tabLogin" role="tab" aria-selected="true" aria-controls="loginPanel">Log in</button>
+        <button class="auth-tab" id="tabSignup" role="tab" aria-selected="false" aria-controls="signupPanel">Sign up</button>
+      </div>
+
+      <!-- Login panel -->
+      <form class="auth-form" id="loginPanel" role="tabpanel" novalidate>
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-sub">Log in to continue your career journey.</p>
+
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" name="email" placeholder="you@example.com" />
+          <small class="error" id="loginEmailErr"></small>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Your password" />
+          <small class="error" id="loginPasswordErr"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        <p class="form-success" id="loginSuccess" role="status"></p>
+        <p class="auth-switch">New here? <button type="button" class="link-btn" id="switchToSignup">Create an account</button></p>
+      </form>
+
+      <!-- Signup panel -->
+      <form class="auth-form hidden" id="signupPanel" role="tabpanel" novalidate>
+        <h1 class="auth-title">Create your account</h1>
+        <p class="auth-sub">Join thousands of women growing their careers.</p>
+
+        <div class="field">
+          <label for="suName">Full name</label>
+          <input type="text" id="suName" name="name" placeholder="Your full name" />
+          <small class="error" id="suNameErr"></small>
+        </div>
+        <div class="field">
+          <label for="suEmail">Email</label>
+          <input type="email" id="suEmail" name="email" placeholder="you@example.com" />
+          <small class="error" id="suEmailErr"></small>
+        </div>
+        <div class="field">
+          <label for="suPassword">Password</label>
+          <input type="password" id="suPassword" name="password" placeholder="At least 6 characters" />
+          <small class="error" id="suPasswordErr"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+        <p class="form-success" id="signupSuccess" role="status"></p>
+        <p class="auth-switch">Already have an account? <button type="button" class="link-btn" id="switchToLogin">Log in</button></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer footer-simple">
+    <div class="container">
+      <p>&copy; <span id="year"></span> HerCareer · Made for Women Empowerment</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
